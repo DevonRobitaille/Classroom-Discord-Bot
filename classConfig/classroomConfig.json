@@ -1,0 +1,184 @@
+{
+    "Categories": {
+        "Class- Information":{
+            "type": "category",
+            "name": "Information",
+            "Channels": {
+                "Reminder": {
+                    "type": "text",
+                    "name": "Reminder",
+                    "allow": [
+                        "READ_MESSAGE_HISTORY",
+                        "ADD_REACTIONS"
+                    ],
+                    "deny": [
+                        "MANAGE_CHANNELS",
+                        "MANAGE_WEBHOOKS",
+                        "SEND_MESSAGES",
+                        "EMBED_LINKS",
+                        "ATTACH_FILES",
+                        "USE_EXTERNAL_EMOJIS",
+                        "MENTION_EVERYONE",
+                        "MANAGE_MESSAGES",
+                        "SEND_TTS_MESSAGES",
+                         "CREATE_INSTANT_INVITE",
+                         "VIEW_CHANNEL"
+                     ],
+                    "rolePermissions": {
+                        "Student": {"VIEW_CHANNEL":true},
+                        "Instructor": {
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true
+                        },
+                        "TA": {
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true
+                        }
+                    }
+                },
+                "Resources": {
+                    "type": "text",
+                    "name": "Resources",
+                    "deny": [
+                        "CREATE_INSTANT_INVITE",
+                        "VIEW_CHANNEL"
+                    ],
+                    "rolePermissions": {
+                        "Instructor": {"VIEW_CHANNEL":true},
+                        "Student": {"VIEW_CHANNEL":true},
+                        "TA": {"VIEW_CHANNEL":true}
+                    }
+                }
+            }
+        },
+        "Class - Text":{
+            "type": "category",
+            "name": "Text Channels",
+            "Channels": {
+                "General": {
+                    "type": "text",
+                    "name": "General",
+                    "allow": [
+                        "READ_MESSAGE_HISTORY"
+                    ],
+                    "deny": [
+                         "CREATE_INSTANT_INVITE",
+                         "VIEW_CHANNEL"
+                     ],
+                    "rolePermissions": {
+                        "Instructor": {"VIEW_CHANNEL":true},
+                        "Student": {"VIEW_CHANNEL":true},
+                        "TA": {"VIEW_CHANNEL":true}
+                    }
+                },
+                "Staff": {
+                    "type": "text",
+                    "name": "Staff",
+                    "deny": [
+                        "VIEW_CHANNEL"
+                    ],
+                    "rolePermissions": {
+                        "Instructor": {"VIEW_CHANNEL":true},
+                        "TA": {"VIEW_CHANNEL":true}
+                    }
+                }
+            }
+        },
+        "Class - Voice":{
+            "type": "category",
+            "name": "Voice Channels",
+            "Channels": {
+                "General": {
+                    "type": "voice",
+                    "name": "General",
+                    "deny": [
+                        "VIEW_CHANNEL"
+                    ],
+                    "rolePermissions": {
+                        "Student": {"VIEW_CHANNEL":true},
+                        "Instructor": {"VIEW_CHANNEL":true},
+                        "TA": {"VIEW_CHANNEL":true}
+                    }
+                },
+                "Staff": {
+                    "type": "voice",
+                    "name": "Staff",
+                    "deny": [
+                        "VIEW_CHANNEL"
+                    ],
+                    "rolePermissions": {
+                        "Instructor": {"VIEW_CHANNEL":true},
+                        "TA": {"VIEW_CHANNEL":true}
+                    }
+                },
+                "Study Room": {
+                    "type": "voice",
+                    "name": "Study Room",
+                    "deny": [
+                        "VIEW_CHANNEL"
+                    ],
+                    "rolePermissions": {
+                        "Student": {"VIEW_CHANNEL":true},
+                        "Instructor": {"VIEW_CHANNEL":true},
+                        "TA": {"VIEW_CHANNEL":true}
+                    }
+                }
+            }
+        }
+    },
+    "Roles": {
+        "Instructor":  {
+            "Permissions": [
+                "VIEW_CHANNEL",
+                "CREATE_INSTANT_INVITE",
+                "CHANGE_NICKNAME",
+                "MANAGE_NICKNAMES",
+                "SEND_MESSAGES",
+                "EMBED_LINKS",
+                "ATTACH_FILES",
+                "ADD_REACTIONS",
+                "MANAGE_MESSAGES",
+                "READ_MESSAGE_HISTORY",
+                "CONNECT",
+                "SPEAK",
+                "STREAM",
+                "MUTE_MEMBERS",
+                "DEAFEN_MEMBERS",
+                "MOVE_MEMBERS"
+            ],
+            "Color": "RED"
+        },
+        "Student": {
+            "Permissions": [
+                "VIEW_CHANNEL",
+                "SEND_MESSAGES",
+                "EMBED_LINKS",
+                "ATTACH_FILES",
+                "ADD_REACTIONS",
+                "READ_MESSAGE_HISTORY",
+                "CONNECT",
+                "SPEAK",
+                "STREAM"
+            ],
+            "Color": "AQUA"
+        },
+        "TA": {
+            "Permissions": [
+                "VIEW_CHANNEL",
+                "SEND_MESSAGES",
+                "EMBED_LINKS",
+                "ATTACH_FILES",
+                "ADD_REACTIONS",
+                "READ_MESSAGE_HISTORY",
+                "CONNECT",
+                "SPEAK",
+                "STREAM"
+            ],
+            "Color": "ORANGE"
+        }
+    }
+}

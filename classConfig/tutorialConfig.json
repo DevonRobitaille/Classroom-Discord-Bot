@@ -1,0 +1,50 @@
+{
+    "Categories": {
+        "Class - Text":{
+            "type": "category",
+            "name": "Tutorial",
+            "Channels": {
+                "General - Text": {
+                    "type": "text",
+                    "name": "text",
+                    "allow": [
+                        "READ_MESSAGE_HISTORY"
+                    ],
+                    "deny": [
+                         "CREATE_INSTANT_INVITE",
+                         "VIEW_CHANNEL"
+                     ],
+                    "rolePermissions": {
+                        "Instructor": {"VIEW_CHANNEL":true},
+                        "Tutorial": {"VIEW_CHANNEL":true},
+                        "TA": {"VIEW_CHANNEL":true}
+                    }
+                },
+                "General- Voice": {
+                    "type": "voice",
+                    "name": "voice",
+                    "deny": [
+                        "VIEW_CHANNEL"
+                    ],
+                    "rolePermissions": {
+                        "Instructor": {"VIEW_CHANNEL":true},
+                        "Tutorial": {"VIEW_CHANNEL":true},
+                        "TA": {"VIEW_CHANNEL":true}
+                    }
+                }
+            }
+        }
+    },
+    "Roles": {
+        "Tutorial":  {
+            "Permissions": [
+                "VIEW_CHANNEL",
+                "EMBED_LINKS",
+                "ATTACH_FILES",
+                "ADD_REACTIONS",
+                "READ_MESSAGE_HISTORY"
+            ],
+            "Color": "AQUA"
+        }
+    }
+}

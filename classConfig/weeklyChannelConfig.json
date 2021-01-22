@@ -1,0 +1,19 @@
+{
+    "Channels": {
+        "Week": {
+            "type": "text",
+            "name": "Week",
+            "allow": [
+                "READ_MESSAGE_HISTORY"
+            ],
+            "deny": [
+                "CREATE_INSTANT_INVITE",
+                "VIEW_CHANNEL"
+            ],
+            "rolePermissions": {
+                "Student": {"VIEW_CHANNEL":true},
+                "Instructor": {"VIEW_CHANNEL":true}
+            }
+        }
+    }
+}

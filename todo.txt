@@ -1,0 +1,7 @@
+Add Channels for:
+- Add category for army, navy, airforce that shows online/total
+
+!help
+    Setup to choose menu by folder of commands, and still have the arrows feature
+
+Error Checking:
