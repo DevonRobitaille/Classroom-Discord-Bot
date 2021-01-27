@@ -19,7 +19,7 @@ module.exports = {
                     name: role,
                     color: roles[role].Color,
                     hoist: false,
-                    permissions: roles[role].Permissions,
+                    permissions: (roles[role].Permissions) ? (roles[role].Permissions) : [],
                     mentionable: false
                 },
                 reason: 'Setup initial state of server',
@@ -29,6 +29,6 @@ module.exports = {
         }
 
         console.log("Roles Added");
-        message.reply(`All role(s) for the server were added successfully.`);
+        message.reply(`All role(s) for the server were added successfully. Remember to disable all permissions for the @Everyone role`);
     }
 }

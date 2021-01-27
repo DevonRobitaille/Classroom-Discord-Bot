@@ -14,6 +14,10 @@ client.on('ready', async () => {
   loadCommands(client)
   loadFeatures(client)
 
+  client.user.setActivity('the mainframe', { type: 'WATCHING' })
+  .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+  .catch(console.error);
+
 })
 
 client.login(config.token)

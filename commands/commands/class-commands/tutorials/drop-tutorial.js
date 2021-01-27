@@ -23,13 +23,13 @@ module.exports = {
         const parentCategory = channel.parent;
 
         // Make sure parent category is a class or the valid tutorial room
-        if (!parentCategory.name.includes("class-Text") && !parentCategory.name.includes(channelClassName + "-" + tutorialName + "-")){
-            message.reply(`This command can only be run from inside a "Classrom-Text Channels" or inside the tutorial "${tutorialName}" category.`);
+        if (!parentCategory.name.includes("class-") && !parentCategory.name.includes(channelClassName + "-" + tutorialName + "-")){
+            message.reply(`This command can only be run from inside a "Class-💬Text Channels" or inside the tutorial "${tutorialName}" category.`);
             return;
         }
 
         // get tutorial category
-        const tutorialCategoryName =  channelClassName + "-" + tutorialName + "-Tutorial";
+        const tutorialCategoryName =  channelClassName + "-" + tutorialName + "-💬| Tutorial";
         let tutorialChannels = guild.channels.cache.filter(c => c.name === tutorialCategoryName);
         if (tutorialChannels.size > 0) {
             tutorialChannels.forEach(category => {

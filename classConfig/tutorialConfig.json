@@ -2,34 +2,71 @@
     "Categories": {
         "Class - Text":{
             "type": "category",
-            "name": "Tutorial",
+            "name": "💬| Tutorial",
             "Channels": {
                 "General - Text": {
                     "type": "text",
-                    "name": "text",
-                    "allow": [
-                        "READ_MESSAGE_HISTORY"
-                    ],
+                    "name": "💬| text",
                     "deny": [
                          "CREATE_INSTANT_INVITE",
                          "VIEW_CHANNEL"
                      ],
                     "rolePermissions": {
-                        "Instructor": {"VIEW_CHANNEL":true},
-                        "Tutorial": {"VIEW_CHANNEL":true},
-                        "TA": {"VIEW_CHANNEL":true}
+                        "Instructor": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "CREATE_INSTANT_INVITE": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS": true
+                        },
+                        "Tutorial": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "CREATE_INSTANT_INVITE": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS": true
+                        },
+                        "TA": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "CREATE_INSTANT_INVITE": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS": true
+                        }
                     }
                 },
                 "General- Voice": {
                     "type": "voice",
-                    "name": "voice",
+                    "name": "📞| voice",
                     "deny": [
+                        "CREATE_INSTANT_INVITE",
                         "VIEW_CHANNEL"
                     ],
                     "rolePermissions": {
-                        "Instructor": {"VIEW_CHANNEL":true},
-                        "Tutorial": {"VIEW_CHANNEL":true},
-                        "TA": {"VIEW_CHANNEL":true}
+                        "Instructor": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        },
+                        "Tutorial": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        },
+                        "TA": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        }
                     }
                 }
             }
@@ -37,13 +74,7 @@
     },
     "Roles": {
         "Tutorial":  {
-            "Permissions": [
-                "VIEW_CHANNEL",
-                "EMBED_LINKS",
-                "ATTACH_FILES",
-                "ADD_REACTIONS",
-                "READ_MESSAGE_HISTORY"
-            ],
+            "Permissions": [],
             "Color": "AQUA"
         }
     }

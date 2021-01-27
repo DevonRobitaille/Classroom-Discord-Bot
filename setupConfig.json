@@ -1,297 +1,228 @@
 {
-    "Categories": {
-        "Announcements": {
-            "type": "category",
-            "name": "---📢 Announcements 📢---",
-            "Channels": {
-                "News": {
-                    "type": "text",
-                    "name": "📰| News",
-                    "allow": [
-                        "READ_MESSAGE_HISTORY",
-                        "ADD_REACTIONS"
-                    ],
-                    "deny": [
-                        "VIEW_CHANNEL",
-                         "MANAGE_CHANNELS",
-                         "MANAGE_WEBHOOKS",
-                         "EMBED_LINKS",
-                         "ATTACH_FILES",
-                         "USE_EXTERNAL_EMOJIS",
-                         "MENTION_EVERYONE",
-                         "MANAGE_MESSAGES",
-                         "SEND_TTS_MESSAGES",
-                         "CREATE_INSTANT_INVITE",
-                         "SEND_MESSAGES"
-                     ],
-                     "rolePermissions": {
-                         "Moderator": {
-                             "SEND_MESSAGES":true,
-                             "EMBED_LINKS": true,
-                             "ATTACH_FILES" :true,
-                             "MENTION_EVERYONE": true,
-                             "MANAGE_MESSAGES": true
-                         },
-                         "Developer": {
-                             "SEND_MESSAGES":true,
-                             "EMBED_LINKS": true,
-                             "ATTACH_FILES" :true,
-                             "MENTION_EVERYONE": true,
-                             "MANAGE_MESSAGES": true
-                         },
-                         "Registered": {"VIEW_CHANNEL":true}
-                     }
-                },
-                "Job Opportunities/Taskings": {
-                    "type": "text",
-                    "name": "💰| jobs-taskings",
-                    "allow": [
-                        "READ_MESSAGE_HISTORY",
-                        "ADD_REACTIONS"
-                    ],
-                    "deny": [
-                        "VIEW_CHANNEL",
-                         "MANAGE_CHANNELS",
-                         "MANAGE_WEBHOOKS",
-                         "EMBED_LINKS",
-                         "ATTACH_FILES",
-                         "USE_EXTERNAL_EMOJIS",
-                         "MENTION_EVERYONE",
-                         "MANAGE_MESSAGES",
-                         "SEND_TTS_MESSAGES",
-                         "CREATE_INSTANT_INVITE",
-                         "SEND_MESSAGES"
-                     ],
-                     "rolePermissions": {
-                         "Moderator": {
-                             "SEND_MESSAGES":true,
-                             "EMBED_LINKS": true,
-                             "ATTACH_FILES" :true,
-                             "MENTION_EVERYONE": true,
-                             "MANAGE_MESSAGES": true
-                         },
-                         "Developer": {
-                             "SEND_MESSAGES":true,
-                             "EMBED_LINKS": true,
-                             "ATTACH_FILES" :true,
-                             "MENTION_EVERYONE": true,
-                             "MANAGE_MESSAGES": true
-                         },
-                         "Registered": {"VIEW_CHANNEL":true}
-                     }
-                }
-            }
-        },
-        "Main":{
-            "type": "category",
-            "name": "---💬 General 💬---",
-            "Channels": {
-                "General": {
-                    "type": "text",
-                    "name": "💬| General-chat",
-                    "deny": [
-                        "CREATE_INSTANT_INVITE"
-                      ],
-                    "rolePermissions": {
-                        "Not Registered": {"VIEW_CHANNEL":false}
-                    }
-                },
-                "Register": {
-                    "type": "text",
-                    "name": "👋| Register",
-                    "allow": [
-                        "CREATE_INSTANT_INVITE",
-                        "READ_MESSAGE_HISTORY"
-                    ],
-                    "deny": [
-                        "VIEW_CHANNEL",
-                         "MANAGE_CHANNELS",
-                         "MANAGE_WEBHOOKS",
-                         "SEND_MESSAGES",
-                         "EMBED_LINKS",
-                         "ATTACH_FILES",
-                         "ADD_REACTIONS",
-                         "USE_EXTERNAL_EMOJIS",
-                         "MENTION_EVERYONE",
-                         "MANAGE_MESSAGES",
-                         "SEND_TTS_MESSAGES"
-                      ],
-                    "rolePermissions": {
-                        "Not Registered": {"VIEW_CHANNEL":true}
-                    }
-                },
-                "Server-Moderation": {
-                    "type": "text",
-                    "name": "🤐| Server-Moderation",
-                    "deny": [
-                        "VIEW_CHANNEL"
-                      ]
-                },
-                "Rules-And-Guidelines": {
-                    "type": "text",
-                    "name": "📋| Rules-And-Guidelines",
-                    "allow": [
-                        "READ_MESSAGE_HISTORY"
-                    ],
-                    "deny": [
-                        "MANAGE_CHANNELS",
-                        "MANAGE_WEBHOOKS",
-                        "SEND_MESSAGES",
-                        "EMBED_LINKS",
-                        "ATTACH_FILES",
-                        "ADD_REACTIONS",
-                        "USE_EXTERNAL_EMOJIS",
-                        "MENTION_EVERYONE",
-                        "MANAGE_MESSAGES",
-                        "SEND_TTS_MESSAGES",
-                         "CREATE_INSTANT_INVITE",
-                         "VIEW_CHANNEL"
-                     ],
-                     "rolePermissions": {
-                         "Registered": {"VIEW_CHANNEL":true},
-                         "Not Registered": {"VIEW_CHANNEL":false}
-                     }
-                },
-                "Role-Claim": {
-                    "type": "text",
-                    "name": "🎖️| Role-Claim",
-                    "allow": [
-                        "READ_MESSAGE_HISTORY",
-                        "ADD_REACTIONS"
-                    ],
-                    "deny": [
-                        "MANAGE_CHANNELS",
-                        "MANAGE_WEBHOOKS",
-                        "SEND_MESSAGES",
-                        "EMBED_LINKS",
-                        "ATTACH_FILES",
-                        "USE_EXTERNAL_EMOJIS",
-                        "MENTION_EVERYONE",
-                        "MANAGE_MESSAGES",
-                        "SEND_TTS_MESSAGES",
-                         "CREATE_INSTANT_INVITE",
-                         "VIEW_CHANNEL"
-                     ],
-                     "rolePermissions": {
-                         "Registered": {"VIEW_CHANNEL":true},
-                         "Not Registered": {"VIEW_CHANNEL":false}
-                     }
-                },
-                "Bot-Commands": {
-                    "type": "text",
-                    "name": "🤖| Bot-Commands",
-                    "allow": [
-                        "SEND_MESSAGES"
-                    ],
-                    "deny": [
-                        "MANAGE_CHANNELS",
-                        "MANAGE_WEBHOOKS",
-                        "READ_MESSAGE_HISTORY",
-                        "EMBED_LINKS",
-                        "ATTACH_FILES",
-                        "ADD_REACTIONS",
-                        "USE_EXTERNAL_EMOJIS",
-                        "MENTION_EVERYONE",
-                        "MANAGE_MESSAGES",
-                        "SEND_TTS_MESSAGES",
-                         "CREATE_INSTANT_INVITE",
-                         "VIEW_CHANNEL"
-                     ],
-                     "rolePermissions": {
-                         "Registered": {"VIEW_CHANNEL":true},
-                         "Not Registered": {"VIEW_CHANNEL":false}
-                     }
-                }
-            }
-        },
-        "Voice":{
-            "type": "category",
-            "name": "---☎️ Voice Channels  ☎️---",
-            "Channels": {
-                "General": {
-                    "type": "voice",
-                    "name": "📞| General",
-                    "deny": [
-                        "CREATE_INSTANT_INVITE"
-                      ],
-                    "rolePermissions": {
-                        "Not Registered": {"VIEW_CHANNEL":false}
-                    }
-                }
-            }
-        },
-        "Support": {
-            "type": "category",
-            "name": "---✔️ Support ✔️---",
-            "Channels": {
-                "Tickets": {
-                    "type": "text",
-                    "name": "💡| Tickets",
-                    "allow": [
-                        "SEND_MESSAGES",
-                        "READ_MESSAGE_HISTORY",
-                        "ADD_REACTIONS"
-                    ],
-                    "deny": [
-                        "VIEW_CHANNEL",
-                         "MANAGE_CHANNELS",
-                         "MANAGE_WEBHOOKS",
-                         "EMBED_LINKS",
-                         "ATTACH_FILES",
-                         "USE_EXTERNAL_EMOJIS",
-                         "MENTION_EVERYONE",
-                         "MANAGE_MESSAGES",
-                         "SEND_TTS_MESSAGES",
-                         "CREATE_INSTANT_INVITE"
-                     ],
-                     "rolePermissions": {
-                         "Moderator": {"VIEW_CHANNEL":true},
-                         "Developer": {"VIEW_CHANNEL":true}
-                     }
-                }
-            }
-        }
-    },
-    "Roles": {
-        "Not Registered": {
-            "Permissions": [
-                "ADD_REACTIONS",
-                "READ_MESSAGE_HISTORY",
-                "SEND_MESSAGES"
-            ],
-            "Color": "WHITE"
-        },
-        "Army": {
-            "Permissions" : [],
-            "Color": "GREEN"
-        },
-        "Airforce": {
-            "Permissions" : [],
-            "Color": "BLUE"
-        },
-        "Navy": {
-            "Permissions" : [],
-            "Color": "NAVY"
-        },
-        "PRes": {
-            "Permissions" : [],
-            "Color": "BLURPLE"
-        },
-        "RegF": {
-            "Permissions" : [],
-            "Color": "NOT_QUITE_BLACK"
-        },
-        "Registered": {
-            "Permissions" : [],
-            "Color": "ORANGE"
-        },
-        "Moderator": {
-            "Permissions" : ["ADMINISTRATOR"],
-            "Color": "AQUA"
-        },
-        "Developer": {
-            "Permissions" : ["ADMINISTRATOR"],
-            "Color": "RED"
-        }
-    }
+	"Categories": {
+		"Announcements": {
+			"type": "category",
+			"name": "---📢 Announcements 📢---",
+			"Channels": {
+				"News": {
+					"type": "text",
+					"name": "📰| News",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true,
+							"ADD_REACTIONS": true
+						}
+					}
+				},
+				"Job Opportunities/Taskings": {
+					"type": "text",
+					"name": "💰| jobs-taskings",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true,
+							"ADD_REACTIONS": true
+						}
+					}
+				},
+				"Exercises": {
+					"type": "text",
+					"name": "⛺| exercises",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true,
+							"ADD_REACTIONS": true
+						}
+					}
+				},
+				"Polls": {
+					"type": "text",
+					"name": "📊| polls",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true
+						}
+					}
+				}
+			}
+		},
+		"Main": {
+			"type": "category",
+			"name": "---💬 General 💬---",
+			"Channels": {
+				"General": {
+					"type": "text",
+					"name": "💬| General-chat",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true,
+							"ADD_REACTIONS": true,
+							"SEND_MESSAGES": true
+						}
+					}
+				},
+				"Register": {
+					"type": "text",
+					"name": "👋| Register",
+					"rolePermissions": {
+						"Not Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true
+						}
+					}
+				},
+				"Server-Moderation": {
+					"type": "text",
+					"name": "🤐| Server-Moderation"
+				},
+				"Rules-And-Guidelines": {
+					"type": "text",
+					"name": "📋| Rules-And-Guidelines",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true
+						}
+					}
+				},
+				"Role-Claim": {
+					"type": "text",
+					"name": "🎖️| Role-Claim",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true
+						}
+					}
+				},
+				"Bot-Commands": {
+					"type": "text",
+					"name": "🤖| Bot-Commands",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true,
+							"ADD_REACTIONS": true,
+							"SEND_MESSAGES": true
+						}
+					}
+				}
+			}
+		},
+		"Competitions": {
+			"type": "category",
+			"name": "---🥇 Competitions 🥇---",
+			"Channels": {
+				"General": {
+					"type": "text",
+					"name": "🥇| faq-and-info",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true
+						}
+					}
+				},
+				"Teams": {
+					"type": "text",
+					"name": "🚧| official-teams",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true
+						}
+					}
+				},
+				"Competition-Chat": {
+					"type": "text",
+					"name": "💬| competition-chat",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true,
+							"SEND_MESSAGES": true,
+							"ADD_REACTIONS": true
+						}
+					}
+				},
+				"Find-Teammates": {
+					"type": "text",
+					"name": "🖐️| find-teammates",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"READ_MESSAGE_HISTORY": true,
+							"SEND_MESSAGES": true,
+							"ADD_REACTIONS": true
+						}
+					}
+				}
+			}
+		},
+		"Voice": {
+			"type": "category",
+			"name": "---☎️ Voice Channels  ☎️---",
+			"Channels": {
+				"General": {
+					"type": "voice",
+					"name": "📞| Breakout",
+					"rolePermissions": {
+						"Registered": {
+							"VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+						}
+					}
+				}
+			}
+		},
+		"Support": {
+			"type": "category",
+			"name": "---✔️ Support ✔️---",
+			"Channels": {
+				"Tickets": {
+					"type": "text",
+					"name": "💡| Tickets",
+					"rolePermissions": {}
+				}
+			}
+		}
+	},
+	"Roles": {
+		"Moderator": {
+			"Permissions": ["ADMINISTRATOR"],
+			"Color": "AQUA"
+		},
+		"Developer": {
+			"Permissions": ["ADMINISTRATOR"],
+			"Color": "RED"
+		},
+		"Registered": {
+			"Permissions": ["CHANGE_NICKNAME"],
+			"Color": "ORANGE"
+		},
+		"Not Registered": {
+			"Color": "WHITE"
+		},
+		"Army": {
+			"Color": "GREEN"
+		},
+		"Airforce": {
+			"Color": "BLUE"
+		},
+		"Navy": {
+			"Color": "NAVY"
+		},
+		"PRes": {
+			"Color": "BLURPLE"
+		},
+		"RegF": {
+			"Color": "NOT_QUITE_BLACK"
+		}
+	}
 }

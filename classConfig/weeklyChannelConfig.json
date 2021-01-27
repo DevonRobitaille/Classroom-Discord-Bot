@@ -2,17 +2,39 @@
     "Channels": {
         "Week": {
             "type": "text",
-            "name": "Week",
-            "allow": [
-                "READ_MESSAGE_HISTORY"
-            ],
+            "name": "📅| week",
             "deny": [
                 "CREATE_INSTANT_INVITE",
                 "VIEW_CHANNEL"
             ],
             "rolePermissions": {
-                "Student": {"VIEW_CHANNEL":true},
-                "Instructor": {"VIEW_CHANNEL":true}
+                "Instructor": {
+                    "READ_MESSAGE_HISTORY": true,
+                    "CREATE_INSTANT_INVITE": true,
+                    "VIEW_CHANNEL":true,
+                    "SEND_MESSAGES": true,
+                    "EMBED_LINKS":true,
+                    "ATTACH_FILES":true,
+                    "ADD_REACTIONS": true
+                },
+                "Student": {
+                    "READ_MESSAGE_HISTORY": true,
+                    "CREATE_INSTANT_INVITE": true,
+                    "VIEW_CHANNEL":true,
+                    "SEND_MESSAGES": true,
+                    "EMBED_LINKS":true,
+                    "ATTACH_FILES":true,
+                    "ADD_REACTIONS": true
+                },
+                "TA": {
+                    "READ_MESSAGE_HISTORY": true,
+                    "CREATE_INSTANT_INVITE": true,
+                    "VIEW_CHANNEL":true,
+                    "SEND_MESSAGES": true,
+                    "EMBED_LINKS":true,
+                    "ATTACH_FILES":true,
+                    "ADD_REACTIONS": true
+                }
             }
         }
     }

@@ -11,7 +11,7 @@ module.exports = {
         const studentRoleName = arguments[0]+"-Student";
         const instructorRoleName = arguments[0]+"-Instructor";
         const TARoleName = arguments[0]+"-TA";
-        const classroomName = arguments[0]+"-class-Text Channels";
+        const classroomName = arguments[0]+"-class-💬 Text Channels 💬";
 
         // has roles set
         const roleInstructor = guild.roles.cache.find(role => role.name === instructorRoleName);
@@ -65,7 +65,7 @@ module.exports = {
                 studentTotalSize++;
                 let name =  student.nickname || student.user.username;
 
-                if (studentOnlineList.user.presence.status === 'online') studentOnlineList.push(name);
+                if (student.user.presence.status === 'online') studentOnlineList.push(name);
                 else studentOfflineList.push(name);
             })
         }
@@ -93,7 +93,7 @@ module.exports = {
                 TATotalSize++;
                 let name =  TA.nickname || TA.user.username;
 
-                if (TAOnlineList.user.presence.status === 'online') TAOnlineList.push(name);
+                if (TA.user.presence.status === 'online') TAOnlineList.push(name);
                 else TAOfflineList.push(name);
             })
         }
@@ -114,8 +114,8 @@ module.exports = {
         const embed = new Discord.MessageEmbed() // Define a new embed
         .setTitle(`Class: ${arguments[0]}`)
         .setColor(0xFFC300) // Set the color
-        .addField(`Roles Created`, (roleInstructor || roleStudent) ? "Yes" : "No", false)
-        .addField(`Classroom Created`, (classroom) ? "Yes" : "No", false)
+        // .addField(`Roles Created`, (roleInstructor || roleStudent) ? "Yes" : "No", false)
+        // .addField(`Classroom Created`, (classroom) ? "Yes" : "No", false)
         .addField(`Date Created`, (classroom) ? new Date(classroom.createdTimestamp).toLocaleDateString() : "Classroom has not been created", false)
         .addFields(
             {name: '\u200B',value: '\u200B', inline:false},
@@ -131,7 +131,7 @@ module.exports = {
         )
         .addFields(
             {name: '\u200B',value: '\u200B', inline:false},
-            {name: `Students(s) - ${studentTotalSize}`,value: '\u200B', inline: false},
+            {name: `Student(s) - ${studentTotalSize}`,value: '\u200B', inline: false},
             {name: `Online`, value: (studentOnlineString !== "") ? studentOnlineString : "None", inline: true},
             {name: `Offline`, value: (studentOfflineString !== "") ? studentOfflineString : "None", inline: true}
         )

@@ -7,7 +7,7 @@ module.exports = {
         const { guild } = message;
 
         // Create a list of all classrooms
-        const classListChannels = guild.channels.cache.filter(channel => channel.type === "category" && channel.name.includes("class-Text"));
+        const classListChannels = guild.channels.cache.filter(channel => channel.type === "category" && channel.name.includes("-class-💬 Text Channels 💬"));
         let classList = "";
         classListChannels.forEach(c => {
             classList += '"' + c.name.split("-")[0] + '", ' ;

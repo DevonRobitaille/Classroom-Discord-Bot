@@ -2,129 +2,221 @@
     "Categories": {
         "Class- Information":{
             "type": "category",
-            "name": "Information",
+            "name": "📢 Information 📢",
             "Channels": {
                 "Reminder": {
                     "type": "text",
-                    "name": "Reminder",
-                    "allow": [
-                        "READ_MESSAGE_HISTORY",
-                        "ADD_REACTIONS"
-                    ],
+                    "name": "⏰| Reminder",
                     "deny": [
-                        "MANAGE_CHANNELS",
-                        "MANAGE_WEBHOOKS",
-                        "SEND_MESSAGES",
-                        "EMBED_LINKS",
-                        "ATTACH_FILES",
-                        "USE_EXTERNAL_EMOJIS",
-                        "MENTION_EVERYONE",
-                        "MANAGE_MESSAGES",
-                        "SEND_TTS_MESSAGES",
-                         "CREATE_INSTANT_INVITE",
+                        "CREATE_INSTANT_INVITE",
                          "VIEW_CHANNEL"
                      ],
                     "rolePermissions": {
-                        "Student": {"VIEW_CHANNEL":true},
+                        "Student": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "ADD_REACTIONS": true
+                        },
                         "Instructor": {
+                            "READ_MESSAGE_HISTORY": true,
                             "VIEW_CHANNEL":true,
                             "SEND_MESSAGES": true,
                             "EMBED_LINKS":true,
-                            "ATTACH_FILES":true
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS": true
                         },
                         "TA": {
+                            "READ_MESSAGE_HISTORY": true,
                             "VIEW_CHANNEL":true,
                             "SEND_MESSAGES": true,
                             "EMBED_LINKS":true,
-                            "ATTACH_FILES":true
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS": true
                         }
                     }
                 },
                 "Resources": {
                     "type": "text",
-                    "name": "Resources",
+                    "name": "📚| Resources",
                     "deny": [
                         "CREATE_INSTANT_INVITE",
                         "VIEW_CHANNEL"
                     ],
                     "rolePermissions": {
-                        "Instructor": {"VIEW_CHANNEL":true},
-                        "Student": {"VIEW_CHANNEL":true},
-                        "TA": {"VIEW_CHANNEL":true}
+                        "Student": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "ADD_REACTIONS": true
+                        },
+                        "Instructor": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "MANAGE_MESSAGES": true,
+                            "ADD_REACTIONS": true
+                        },
+                        "TA": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS": true
+                        }
                     }
                 }
             }
         },
         "Class - Text":{
             "type": "category",
-            "name": "Text Channels",
+            "name": "💬 Text Channels 💬",
             "Channels": {
                 "General": {
                     "type": "text",
-                    "name": "General",
-                    "allow": [
-                        "READ_MESSAGE_HISTORY"
-                    ],
+                    "name": "💬| General",
                     "deny": [
-                         "CREATE_INSTANT_INVITE",
+                        "CREATE_INSTANT_INVITE",
                          "VIEW_CHANNEL"
                      ],
                     "rolePermissions": {
-                        "Instructor": {"VIEW_CHANNEL":true},
-                        "Student": {"VIEW_CHANNEL":true},
-                        "TA": {"VIEW_CHANNEL":true}
+                        "Instructor": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS" :true,
+                            "MANAGE_MESSAGES": true
+                        },
+                        "Student": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS" :true
+                        },
+                        "TA": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS" :true,
+                            "MANAGE_MESSAGES": true
+                        }
                     }
                 },
                 "Staff": {
                     "type": "text",
-                    "name": "Staff",
+                    "name": "❓| Staff",
                     "deny": [
+                        "CREATE_INSTANT_INVITE",
                         "VIEW_CHANNEL"
                     ],
                     "rolePermissions": {
-                        "Instructor": {"VIEW_CHANNEL":true},
-                        "TA": {"VIEW_CHANNEL":true}
+                        "Instructor": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS" :true
+                        },
+                        "TA": {
+                            "READ_MESSAGE_HISTORY": true,
+                            "VIEW_CHANNEL":true,
+                            "SEND_MESSAGES": true,
+                            "EMBED_LINKS":true,
+                            "ATTACH_FILES":true,
+                            "ADD_REACTIONS" :true
+                        }
                     }
                 }
             }
         },
         "Class - Voice":{
             "type": "category",
-            "name": "Voice Channels",
+            "name": "☎️Voice Channels ☎️",
             "Channels": {
                 "General": {
                     "type": "voice",
-                    "name": "General",
+                    "name": "📞| General",
                     "deny": [
+                        "CREATE_INSTANT_INVITE",
                         "VIEW_CHANNEL"
                     ],
                     "rolePermissions": {
-                        "Student": {"VIEW_CHANNEL":true},
-                        "Instructor": {"VIEW_CHANNEL":true},
-                        "TA": {"VIEW_CHANNEL":true}
+                        "Student": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        },
+                        "Instructor": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        },
+                        "TA": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        }
                     }
                 },
                 "Staff": {
                     "type": "voice",
-                    "name": "Staff",
+                    "name": "❓| Staff",
                     "deny": [
+                        "CREATE_INSTANT_INVITE",
                         "VIEW_CHANNEL"
                     ],
                     "rolePermissions": {
-                        "Instructor": {"VIEW_CHANNEL":true},
-                        "TA": {"VIEW_CHANNEL":true}
+                        "Instructor": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        },
+                        "TA": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        }
                     }
                 },
                 "Study Room": {
                     "type": "voice",
-                    "name": "Study Room",
+                    "name": "📜| Study Room",
                     "deny": [
+                        "CREATE_INSTANT_INVITE",
                         "VIEW_CHANNEL"
                     ],
                     "rolePermissions": {
-                        "Student": {"VIEW_CHANNEL":true},
-                        "Instructor": {"VIEW_CHANNEL":true},
-                        "TA": {"VIEW_CHANNEL":true}
+                        "Student": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        },
+                        "Instructor": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        },
+                        "TA": {
+                            "VIEW_CHANNEL": true,
+							"STREAM": true,
+							"CONNECT": true,
+							"SPEAK": true
+                        }
                     }
                 }
             }
@@ -132,52 +224,15 @@
     },
     "Roles": {
         "Instructor":  {
-            "Permissions": [
-                "VIEW_CHANNEL",
-                "CREATE_INSTANT_INVITE",
-                "CHANGE_NICKNAME",
-                "MANAGE_NICKNAMES",
-                "SEND_MESSAGES",
-                "EMBED_LINKS",
-                "ATTACH_FILES",
-                "ADD_REACTIONS",
-                "MANAGE_MESSAGES",
-                "READ_MESSAGE_HISTORY",
-                "CONNECT",
-                "SPEAK",
-                "STREAM",
-                "MUTE_MEMBERS",
-                "DEAFEN_MEMBERS",
-                "MOVE_MEMBERS"
-            ],
+            "Permissions": [],
             "Color": "RED"
         },
         "Student": {
-            "Permissions": [
-                "VIEW_CHANNEL",
-                "SEND_MESSAGES",
-                "EMBED_LINKS",
-                "ATTACH_FILES",
-                "ADD_REACTIONS",
-                "READ_MESSAGE_HISTORY",
-                "CONNECT",
-                "SPEAK",
-                "STREAM"
-            ],
+            "Permissions": [],
             "Color": "AQUA"
         },
         "TA": {
-            "Permissions": [
-                "VIEW_CHANNEL",
-                "SEND_MESSAGES",
-                "EMBED_LINKS",
-                "ATTACH_FILES",
-                "ADD_REACTIONS",
-                "READ_MESSAGE_HISTORY",
-                "CONNECT",
-                "SPEAK",
-                "STREAM"
-            ],
+            "Permissions": [],
             "Color": "ORANGE"
         }
     }

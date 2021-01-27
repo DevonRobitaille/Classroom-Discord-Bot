@@ -27,12 +27,12 @@ module.exports = {
 
         // Make sure parent category is a classroom
         if (!parentCategory.name.includes("class")) {
-            message.reply(`This command can only be run from inside a "Classrom-Text Channels" category.`);
+            message.reply(`This command can only be run from inside a "Class-💬Text Channels" category.`);
             return;
         }
 
         // Check to make sure week does already exist
-        let channelName = (className+"-week-"+weekNumber);
+        let channelName = (className+"-📅-week-"+weekNumber);
         const channelsList = parentCategory.children.filter(channel => channel.name === channelName);
         if (channelsList.size > 0) {
             channelsList.forEach(c => {

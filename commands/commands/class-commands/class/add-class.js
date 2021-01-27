@@ -48,7 +48,7 @@ addClass = async (guild, className) => {
         for (let channel in channels) {
             const rolePermissions = channels[channel].rolePermissions;
             const type = channels[channel].type;
-            const name =  className + "-" + channels[channel].name.toLowerCase();
+            const name =  className.split("-")[0] + "-" + channels[channel].name.toLowerCase();
             const allow = channels[channel].allow;
             const deny = channels[channel].deny;
             const everyone = guild.roles.everyone;

@@ -53,20 +53,11 @@ module.exports = {
                 const rolePermissions = channels[channel].rolePermissions;
                 const type = channels[channel].type;
                 const name = channels[channel].name;
-                const allow = channels[channel].allow;
-                const deny = channels[channel].deny;
-                const everyone = guild.roles.everyone;
 
                 let child = await guild.channels.create(name, {
                    type: (type) ? type : "text",
                    parent: parent.id,
-                   permissionOverwrites: [
-                       {
-                            id: everyone.id,
-                            allow: (allow) ? allow : [],
-                            deny: (deny) ? deny : [],
-                        },
-                    ],
+                   deny: ["VIEW_CHANNEL"]
                })
 
                console.log(`   Added channel ${child.name}`)

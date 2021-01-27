@@ -5,3 +5,5 @@ Add Channels for:
     Setup to choose menu by folder of commands, and still have the arrows feature
 
 Error Checking:
+
+- exercises

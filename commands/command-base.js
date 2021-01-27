@@ -94,9 +94,15 @@ module.exports = (client, commandOptions) => {
                         return channel.name === requiredChannel
                     })
                     message.delete();
-                    message.reply(
-                        `You can only run this command inside of <#${foundChannel.id}>.`
-                    )
+                    if  (foundChannel) {
+                        message.reply(
+                            `You can only run this command inside of <#${foundChannel.id}>.`
+                        )
+                    } else {
+                        message.reply(
+                            `No channels exist that can support this bot.`
+                        )
+                    }
                     return
                 }
 

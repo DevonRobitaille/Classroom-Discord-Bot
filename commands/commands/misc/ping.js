@@ -1,3 +1,5 @@
+const { botCommandChannelID } = require('@root/config.json');
+
 module.exports = {
   commands: 'ping',
   callback: (message, arguments, text, client) => {
@@ -8,5 +10,5 @@ module.exports = {
     })
   },
   description: "Reply with bot latency.",
-  requiredChannel: ['Bot-Commands']
+  requiredChannel: botCommandChannelID
 }
