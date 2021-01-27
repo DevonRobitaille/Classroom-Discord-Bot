@@ -51,10 +51,12 @@ addTutorial = async (guild, className, tutorialName) => {
         const type = categories[category].type;
         const catName = className + "-" + tutorialName + "-" + categories[category].name;
 
+        // Create a list of all categories that would match the newly created category
         classList[catName] = guild.channels.cache.find((c) => {
             return c.name === catName;
         })
         let parent = undefined;
+        // if the category does not already exist, then create it
         if (!classList[catName]) {
             parent = await guild.channels.create(catName, {
                 type: type
@@ -72,10 +74,12 @@ addTutorial = async (guild, className, tutorialName) => {
             const deny = channels[channel].deny;
             const everyone = guild.roles.everyone;
 
+            // Create a list of all channels that would match the newly created the channel
             classList[name] = guild.channels.cache.find((c) => {
                 return c.name === name && c.parent.name.toLowerCase().includes(type) && c.type === type;
             })
 
+            // if the channel does not already exist, then create it
             if (!classList[name]) {
                 let child = await guild.channels.create(name, {
                     type: (type) ? type : "text",

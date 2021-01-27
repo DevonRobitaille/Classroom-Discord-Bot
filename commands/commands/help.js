@@ -1,3 +1,6 @@
+
+// DEPRECATED - CHECK !helpV2
+
 const loadCommands = require('@root/commands/load-commands')
 const { prefix } = require('@root/config.json')
 const { botCommandChannelID } = require('@root/config.json');

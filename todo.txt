@@ -4,6 +4,7 @@ Add Channels for:
 !help
     Setup to choose menu by folder of commands, and still have the arrows feature
 
+!poll
+    Figure out who should be able to delete the poll
+    
 Error Checking:
-
-- exercises

@@ -1,3 +1,18 @@
-Bot loaded to heroku
+Understand the bot:
+    - All changes need to be pushed to the github repo to be rebuilt and deployed
+    - Heroku will rebuild and redeploy the bot
+    - Several channel features will break and need to be updated (register, rules, role-claim), and as such will need to be rebuilt each time the bot goes down
 
-upload to github to push changes
+New commands file standard:
+    module.exports = {
+            commands, <the command name and aliases>
+            expectedArgs = '', <A list of expected args, used to let the user know the proper syntax of the command>
+            permissionError = "", <The error that gets posted if the user uses the command improperly>
+            minArgs = 0, <min number of arguments an individual can send with the command>
+            maxArgs = null, <max number of arguments an individual can send with the command>
+            cooldown = -1, <how long until the next time the command can be used, measured in seconds>
+            requiredChannel = '', <a single channel where the command can be used>
+            permissions = [], <all the required permissions to use the command>
+            requiredRoles = [], <all the required roles to use the command>
+            callback: () => {}, <The function of the command>
+        }

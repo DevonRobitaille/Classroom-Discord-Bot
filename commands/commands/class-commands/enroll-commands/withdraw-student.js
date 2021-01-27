@@ -21,6 +21,7 @@ module.exports = {
       const userList = message.mentions.users;
       const className = arguments[0];
 
+      // See if the student role exists on the server
       const roleStudent = guild.roles.cache.find((role) => {
         return role.name === className+"-Student";
       })
@@ -29,6 +30,7 @@ module.exports = {
         return
       }
 
+      // For each user listed in the command, remove the student role from them
       userList.forEach(user => {
           // remove role from user
           const memberID = guild.members.cache.get(user.id)

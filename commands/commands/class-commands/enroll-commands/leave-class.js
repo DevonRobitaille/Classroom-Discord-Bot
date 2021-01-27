@@ -11,6 +11,7 @@ module.exports = {
   callback: (message, arguments, text) => {
       const { guild, member } = message;
 
+      // See if the intructor role exists on the server
       const roleInstructor = guild.roles.cache.find((role) => {
         return role.name === arguments[0]+"-Instructor";
       })
@@ -19,6 +20,7 @@ module.exports = {
         return
       }
 
+      // See if the student role exists on the server
       const roleStudent = guild.roles.cache.find((role) => {
         return role.name === arguments[0]+"-Student";
       })
@@ -27,13 +29,33 @@ module.exports = {
         return
       }
 
-      if (member.roles.cache.get(roleInstructor.id)) {
-        member.roles.remove(roleInstructor)
-        message.reply(`You no longer have the ${roleInstructor} role`)
+      // See if the TA role exists on the server
+      const roleTA = guild.roles.cache.find((role) => {
+        return role.name === arguments[0]+"-TA";
+      })
+      if (!roleTA) {
+        message.reply(`There is no role with the name "${roleTA}"`)
+        return
       }
-      if (member.roles.cache.get(roleStudent.id)) {
-        member.roles.remove(roleStudent)
-        message.reply(`You no longer have the ${roleStudent} role`)
+
+      // Remove roles from server
+      if (roleInstructor) {
+          if (member.roles.cache.get(roleInstructor.id)) {
+            member.roles.remove(roleInstructor)
+            message.reply(`You no longer have the ${roleInstructor} role`)
+          }
+      }
+      if (roleStudent) {
+          if (member.roles.cache.get(roleStudent.id)) {
+            member.roles.remove(roleStudent)
+            message.reply(`You no longer have the ${roleStudent} role`)
+          }
+      }
+      if (roleTA) {
+          if (member.roles.cache.get(roleStudent.id)) {
+            member.roles.remove(roleStudent)
+            message.reply(`You no longer have the ${roleStudent} role`)
+          }
       }
   },
   requiredChannel: botCommandChannelID

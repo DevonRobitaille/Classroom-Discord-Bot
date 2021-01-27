@@ -1,9 +1,8 @@
-const { pollsChannelID } = require('@root/config.json');
+const { pollsChannelID, botID } = require('@root/config.json');
 const Discord = require("discord.js");
 
 module.exports = {
     commands: ['poll'],
-    expectedArgs: '<keywords>',
     description: 'Send a poll to the channel',
     callback: async (message, args, text) => {
 
@@ -12,6 +11,7 @@ module.exports = {
         const { content, channel } = message;
         const eachLine = content.split('\n');
 
+        // Check to see if there are enough arguments to create a poll, and if not reply with the proper format
         if (!args || args.length == 0 || eachLine.length <= 1) {
             // did not properly build command
             let embedError = new Discord.MessageEmbed()
@@ -27,6 +27,7 @@ module.exports = {
         //-----------------------
         let emojiList = [];
         let voteOptions = {};
+        // Strip the original message of the poll options (emojis and what they represent)
         for (const line of eachLine) {
             if (line.includes('=')) {
                 const split = line.split('=');
@@ -37,11 +38,13 @@ module.exports = {
             }
         }
 
+        // Create a string to hold all the poll options
         let voteOptionsString = "";
         for (let x in voteOptions) {
             voteOptionsString += voteOptions[x].emoji + " " + voteOptions[x].voteDescription + ' - **1 Votes**'+ '\n';
         }
 
+        // Create an embed to hold the poll information
         const embed = new Discord.MessageEmbed()
         .setAuthor("Helper")
         .setTitle("Poll Question")
@@ -54,6 +57,7 @@ module.exports = {
         .setColor(0xFFC300)
         .setFooter(`${message.author.username} created this poll`);
 
+        // Send message and then create event-handlers to listen for updated reactions
         channel.send({embed}).then(async msg => {
             msg.react('❌').then(async r => {
 
@@ -70,7 +74,7 @@ module.exports = {
                 const filter = (reaction, user) => {
                     return emojiList.includes(reaction.emoji.name);
                 };
-                const removeMessageFilter = (reaction, user) => reaction.emoji.name === '❌' && user.id !== process.env.BOT_ID
+                const removeMessageFilter = (reaction, user) => reaction.emoji.name === '❌' && user.id !== botID
 
                 const collector = msg.createReactionCollector(filter, {dispose: true});
                 const removeMessage = msg.createReactionCollector(removeMessageFilter)
@@ -79,7 +83,7 @@ module.exports = {
                     voteOptionsString = "";
                     let reactionCollection = reaction.message.reactions.cache;
                     for (let x in voteOptions) {
-                        voteOptionsString +=  voteOptions[x].emoji + " " + voteOptions[x].voteDescription + ' -**' + reactionCollection.find(e => e.emoji.name == x).count + ' Votes**'+ '\n';
+                        voteOptionsString +=  voteOptions[x].emoji + " " + voteOptions[x].voteDescription + ' -**' + (reactionCollection.find(e => e.emoji.name == x).count-1) + ' Votes**'+ '\n';
                     }
 
                     embed.fields = [];
@@ -96,6 +100,7 @@ module.exports = {
                     msg.edit(embed)
                 });
 
+                // If the 'X' emoji is clicked, delete the poll
                 collector.on('remove', (reaction, user) => {
                     voteOptionsString = "";
                     let reactionCollection = reaction.message.reactions.cache;

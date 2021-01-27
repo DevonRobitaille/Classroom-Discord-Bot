@@ -12,19 +12,24 @@ module.exports = {
     const roleName = arguments.join(' ')
     const { guild } = message
 
+    // Check to make that it is a valid role from the list
     if (!validRoles.includes(roleName)) {
         message.reply(`please choose a valid role <valid options: Army, AirForce, Navy, PRes, RegF>.`)
         return;
     }
 
+    // Check to see if role exists on server
     const role = guild.roles.cache.find((role) => {
       return role.name === roleName
     })
+
+    // Role does not exist on server
     if (!role) {
       message.reply(`There is no role with the name "${roleName}"`)
       return
     }
 
+    // Add role to member if they do not already have the role
     const member = guild.members.cache.get(targetUser.id)
     if (!member.roles.cache.get(role.id)) {
         member.roles.add(role);
@@ -34,5 +39,5 @@ module.exports = {
   },
   requiredRoles: ['Registered'],
   requiredChannel: botCommandChannelID,
-  description: "By setting the role, the user will have access to the relevant role chatrooms"
+  description: "A user can set their own role from the allowed list"
 }

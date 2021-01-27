@@ -114,8 +114,6 @@ module.exports = {
         const embed = new Discord.MessageEmbed() // Define a new embed
         .setTitle(`Class: ${arguments[0]}`)
         .setColor(0xFFC300) // Set the color
-        // .addField(`Roles Created`, (roleInstructor || roleStudent) ? "Yes" : "No", false)
-        // .addField(`Classroom Created`, (classroom) ? "Yes" : "No", false)
         .addField(`Date Created`, (classroom) ? new Date(classroom.createdTimestamp).toLocaleDateString() : "Classroom has not been created", false)
         .addFields(
             {name: '\u200B',value: '\u200B', inline:false},

@@ -32,20 +32,24 @@ addClass = async (guild, className) => {
         const type = categories[category].type;
         const catName = className + "-" + categories[category].name;
 
+        // Return all channels on the server the equal the category name (should only be 0 or 1)
         classList[catName] = guild.channels.cache.find((c) => {
             return c.name === catName;
         })
         let parent = undefined;
+        // if the category doesn't exist, create it
         if (!classList[catName]) {
             parent = await guild.channels.create(catName, {
                 type: type
             })
         }
 
+        // Create a list of all the channels that are below the parent category (i.e. a size of 0 to a lot)
         const channels = categories[category].Channels;
 
         // Iterate over channels
         for (let channel in channels) {
+            // Store all the attributes for ease of reading
             const rolePermissions = channels[channel].rolePermissions;
             const type = channels[channel].type;
             const name =  className.split("-")[0] + "-" + channels[channel].name.toLowerCase();
@@ -53,10 +57,12 @@ addClass = async (guild, className) => {
             const deny = channels[channel].deny;
             const everyone = guild.roles.everyone;
 
+            // See if the current channel already exsists
             classList[name] = guild.channels.cache.find((c) => {
                 return c.name === name && c.parent.name.toLowerCase().includes(type);
             })
 
+            // Current channel does not already exist, so create it
             if (!classList[name]) {
                 let child = await guild.channels.create(name, {
                     type: (type) ? type : "text",

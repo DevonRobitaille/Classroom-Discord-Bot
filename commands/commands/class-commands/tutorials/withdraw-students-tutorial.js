@@ -22,12 +22,14 @@ module.exports = {
       const role = arguments[0]+ "-" + arguments[1] + "-Tutorial";
       const userList = message.mentions.users;
 
+      // See if the tutorial role already exists
       const roleTutorial = guild.roles.cache.find((r) => { return r.name === role })
       if (!roleTutorial) {
           message.reply("Either the class name or tutorial name is invalid.");
         return
       }
 
+      // For each user listed in the command, remove their tutorial role
       userList.forEach(user => {
           // remove role from user
           const memberID = guild.members.cache.get(user.id)

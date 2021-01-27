@@ -36,8 +36,11 @@ module.exports = {
     const { guild, member } = userMessage
 
     registerEvent(client)
+
+    // Find the ticket channel id
     let channelId = guild.channels.cache.find((channel) => { return channel.name === ticketChannelID });
     const channel = guild.channels.cache.get(channelId.id)
+    // Send a message to the channel containing the ticket info
     channel
       .send(
         `A new ticket has been created by <@${member.id}>
@@ -47,6 +50,7 @@ module.exports = {
 Click the ${check} icon when this issue has been resolved.`
       )
       .then((ticketMessage) => {
+          // reply to user that their ticket has been sent
         ticketMessage.react(check)
 
         userMessage.reply(
